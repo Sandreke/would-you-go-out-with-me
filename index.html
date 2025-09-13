@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b9d">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="¿Salimos? ❤️">
+    <title>¿Salimos? ❤️ by Sandreke</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts for romantic styling -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Main proposal card -->
+        <div id="proposal-section" class="proposal-section">
+            <div class="hearts-bg"></div>
+            
+            <div class="content">
+                <!-- Profile images temporarily hidden -->
+                <!-- <div class="profile-images">
+                    <div class="profile-image">
+                        <img id="creator-image" src="config/messi.png" alt="Yo" onerror="this.style.display='none'">
+                        <span class="label">Yo</span>
+                    </div>
+                    <div class="heart-icon">❤️</div>
+                    <div class="profile-image">
+                        <img id="target-image" src="config/antonela.png" alt="Tú" onerror="this.style.display='none'">
+                        <span class="label">Tú</span>
+                    </div>
+                </div> -->
+
+                <h1 id="question-text" class="question">¿Te gustaría salir conmigo? <3</h1>
+                
+                <!-- Animated GIF to make it more engaging -->
+                <div class="question-gif-container">
+                    <img src="https://media1.tenor.com/m/Q00qNDfVO-cAAAAd/pucca-garu.gif" alt="Question GIF" class="question-gif">
+                </div>
+            </div>
+        </div>
+
+        <!-- Fixed bottom buttons container -->
+        <div class="buttons-container">
+            <div class="btn-wrapper yes-wrapper">
+                <button id="yes-btn" class="btn yes-btn">Sí</button>
+            </div>
+            <div class="btn-wrapper no-wrapper">
+                <button id="no-btn" class="btn no-btn">No</button>
+            </div>
+        </div>
+
+        <!-- Success screen (hidden by default) -->
+        <div id="success-section" class="success-section hidden">
+            <div class="success-content">
+                <h2 id="success-message">¡Lo sabía! 😊</h2>
+                <div class="question-gif-container">
+                    <img id="success-gif" src="https://farm4.static.flickr.com/3262/2720527056_ce94a0ffb4_o.gif" alt="Celebración" class="question-gif">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Credits -->
+    <div class="credits">
+        by <a href="https://github.com/Sandreke/would-you-go-out-with-me" target="_blank" rel="noopener noreferrer">Sandreke</a>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

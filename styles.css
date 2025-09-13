@@ -1,0 +1,558 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 120px;
+}
+
+/* Main proposal card */
+.proposal-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative hearts background */
+.hearts-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(circle at 20% 20%, rgba(255, 182, 193, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(255, 105, 180, 0.3) 0%, transparent 50%),
+        radial-gradient(circle at 40% 60%, rgba(255, 20, 147, 0.2) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+}
+
+.profile-images {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.profile-image img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff6b9d;
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.profile-image img:hover {
+    transform: scale(1.1);
+}
+
+.label {
+    font-size: 14px;
+    color: #666;
+    font-weight: 500;
+}
+
+.heart-icon {
+    font-size: 30px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+/* Main question text */
+.question {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* GIF container styling */
+.question-gif-container {
+    margin: 30px 0;
+    padding: 15px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+    display: inline-block;
+}
+
+.question-gif {
+    width: 200px;
+    height: 150px;
+    border-radius: 15px;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixed bottom buttons container */
+.buttons-container {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100vw;
+    height: auto;
+    pointer-events: none;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 40px;
+}
+
+.btn-wrapper {
+    pointer-events: none;
+}
+
+/* Base button styles */
+.btn {
+    pointer-events: auto;
+    min-width: 140px;
+    min-height: 48px;
+    padding: 18px 48px;
+    border: none;
+    border-radius: 50px;
+    font-size: 22px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: box-shadow 0.3s, background 0.3s, transform 0.3s cubic-bezier(.4,1,.7,1.2);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08), 0 2px 8px rgba(255,107,157,0.10);
+    outline: none;
+    overflow: hidden;
+    user-select: none;
+    z-index: 2;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+/* Yes button - positive action */
+.yes-btn {
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 107, 157, 0.4);
+    z-index: 3;
+}
+
+.yes-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.6);
+}
+
+/* No button - starts relative, becomes fixed when clicked */
+.no-btn {
+    background: linear-gradient(45deg, #6c757d, #adb5bd);
+    color: white;
+    box-shadow: 0 5px 15px rgba(108, 117, 125, 0.4);
+    transform: scale(var(--no-scale, 1));
+    transform-origin: center center;
+    z-index: 1000;
+    position: relative;
+    min-width: 140px;
+    min-height: 48px;
+    transition: box-shadow 0.3s, background 0.3s, transform 0.3s cubic-bezier(.4,1,.7,1.2), left 0.3s, top 0.3s;
+}
+
+.no-btn:hover {
+    transform: scale(var(--no-scale, 1.05));
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.6);
+}
+
+.hide-buttons .btn {
+    display: none !important;
+}
+
+/* Success screen styling */
+.success-section {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.success-content h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2.5rem;
+    color: #ff6b9d;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 4px rgba(255, 107, 157, 0.3);
+}
+
+.success-section .gif-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px 0;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ff6b9d, #ff8fab);
+    box-shadow: 0 10px 30px rgba(255, 107, 157, 0.2);
+    padding: 20px;
+    overflow: hidden;
+}
+
+.success-section .gif-container img {
+    width: 260px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    background: #fff;
+    display: block;
+}
+
+.success-section .question-gif-container img,
+.question-gif-container img {
+    max-width: 100%;
+    max-height: 350px;
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+    background: #fff;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Credits styling */
+.credits {
+    position: fixed;
+    bottom: 10px;
+    right: 15px;
+    font-size: 10px;
+    color: #fff;
+    opacity: 0.7;
+    z-index: 5;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    transition: opacity 0.3s ease;
+}
+
+.credits:hover {
+    opacity: 1;
+}
+
+.credits a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.credits a:hover {
+    color: #f0f0f0;
+    text-decoration: underline;
+}
+
+/* Responsive design */
+
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+    
+    .proposal-section {
+        padding: 35px 30px;
+    }
+    
+    .question {
+        font-size: 2.2rem;
+    }
+    
+    .question-gif {
+        width: 180px;
+        height: 135px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+        margin-top: 15px;
+        margin-bottom: 90px;
+    }
+    
+    .proposal-section {
+        padding: 30px 20px;
+        border-radius: 15px;
+    }
+    
+    .question {
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+    
+    .question-gif {
+        width: 160px;
+        height: 120px;
+    }
+    
+    .question-gif-container {
+        margin: 25px 0;
+        padding: 12px;
+    }
+    
+    .profile-image img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .buttons-container {
+        gap: 25px;
+        padding: 20px 15px;
+    }
+    
+    .btn {
+        min-width: 120px;
+        font-size: 18px;
+        padding: 16px 28px;
+    }
+}
+
+/* Large phones */
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+        margin-top: 10px;
+        margin-bottom: 80px;
+    }
+    
+    .proposal-section {
+        padding: 25px 15px;
+    }
+    
+    .question {
+        font-size: 1.8rem;
+        line-height: 1.3;
+    }
+    
+    .question-gif {
+        width: 140px;
+        height: 105px;
+    }
+    
+    .buttons-container {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+    
+    .btn {
+        min-width: 110px;
+        font-size: 17px;
+        padding: 14px 24px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .container {
+        padding: 8px;
+        margin-top: 8px;
+        margin-bottom: 70px;
+    }
+    
+    .proposal-section {
+        padding: 20px 12px;
+        border-radius: 12px;
+    }
+    
+    .question {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+    
+    .question-gif {
+        width: 120px;
+        height: 90px;
+    }
+    
+    .question-gif-container {
+        margin: 20px 0;
+        padding: 10px;
+        border-radius: 15px;
+    }
+    
+    .profile-images {
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .profile-image img {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .heart-icon {
+        font-size: 24px;
+    }
+    
+    .buttons-container {
+        gap: 15px;
+        padding: 12px 8px;
+    }
+    
+    .btn {
+        min-width: 100px;
+        font-size: 16px;
+        padding: 12px 20px;
+        border-radius: 40px;
+    }
+    
+    .credits {
+        bottom: 8px;
+        right: 10px;
+        font-size: 9px;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .container {
+        padding: 5px;
+        margin-top: 5px;
+        margin-bottom: 60px;
+    }
+    
+    .proposal-section {
+        padding: 15px 10px;
+    }
+    
+    .question {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+    
+    .question-gif {
+        width: 100px;
+        height: 75px;
+    }
+    
+    .question-gif-container {
+        margin: 15px 0;
+        padding: 8px;
+    }
+    
+    .buttons-container {
+        gap: 12px;
+        padding: 10px 5px;
+    }
+    
+    .btn {
+        min-width: 90px;
+        font-size: 15px;
+        padding: 10px 16px;
+    }
+    
+    .credits {
+        bottom: 6px;
+        right: 8px;
+        font-size: 8px;
+    }
+}
+
+/* Landscape orientation for phones */
+@media (max-height: 500px) and (orientation: landscape) {
+    .container {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    
+    .proposal-section {
+        padding: 15px 20px;
+    }
+    
+    .question {
+        font-size: 1.4rem;
+        margin-bottom: 15px;
+    }
+    
+    .question-gif {
+        width: 100px;
+        height: 75px;
+    }
+    
+    .question-gif-container {
+        margin: 15px 0;
+        padding: 8px;
+    }
+    
+    .buttons-container {
+        padding: 8px 15px;
+        gap: 20px;
+    }
+    
+    .btn {
+        min-width: 100px;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+    
+    .credits {
+        bottom: 5px;
+        right: 12px;
+        font-size: 9px;
+    }
+} 
