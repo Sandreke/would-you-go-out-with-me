@@ -363,7 +363,7 @@ body {
     .buttons-container {
         gap: 25px;
         padding: 20px 15px;
-        bottom: 80px;
+        bottom: 120px;
     }
     
     .btn {
@@ -398,7 +398,7 @@ body {
     .buttons-container {
         gap: 20px;
         padding: 15px 10px;
-        bottom: 70px;
+        bottom: 110px;
     }
     
     .btn {
@@ -454,7 +454,7 @@ body {
     .buttons-container {
         gap: 15px;
         padding: 12px 8px;
-        bottom: 60px;
+        bottom: 100px;
     }
     
     .btn {
@@ -501,7 +501,7 @@ body {
     .buttons-container {
         gap: 12px;
         padding: 10px 5px;
-        bottom: 55px;
+        bottom: 95px;
     }
     
     .btn {
