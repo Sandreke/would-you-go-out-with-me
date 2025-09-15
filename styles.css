@@ -332,7 +332,7 @@ body {
     .container {
         padding: 15px;
         margin-top: 15px;
-        margin-bottom: 140px;
+        margin-bottom: 180px;
     }
     
     .proposal-section {
@@ -378,7 +378,7 @@ body {
     .container {
         padding: 10px;
         margin-top: 10px;
-        margin-bottom: 120px;
+        margin-bottom: 160px;
     }
     
     .proposal-section {
@@ -413,7 +413,7 @@ body {
     .container {
         padding: 8px;
         margin-top: 8px;
-        margin-bottom: 110px;
+        margin-bottom: 150px;
     }
     
     .proposal-section {
@@ -476,7 +476,7 @@ body {
     .container {
         padding: 5px;
         margin-top: 5px;
-        margin-bottom: 100px;
+        margin-bottom: 140px;
     }
     
     .proposal-section {
@@ -546,7 +546,7 @@ body {
     .buttons-container {
         padding: 8px 15px;
         gap: 20px;
-        bottom: 10px;
+        bottom: 50px;
     }
     
     .btn {
