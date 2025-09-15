@@ -546,7 +546,7 @@ body {
     .buttons-container {
         padding: 8px 15px;
         gap: 20px;
-        bottom: 50px;
+        bottom: 200px;
     }
     
     .btn {
